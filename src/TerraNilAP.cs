@@ -16,7 +16,7 @@ namespace TerraNilAP;
 [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
 public class TerraNilAP : BaseUnityPlugin
 {
-    public const string GameName = "Terra Nil";
+    public const string GameName = "TerraNil";
 
     internal static new ManualLogSource Logger;
 
