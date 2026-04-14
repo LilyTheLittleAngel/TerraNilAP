@@ -3,7 +3,7 @@
 from enum import Enum
 from dataclasses import dataclass
 from BaseClasses import ItemClassification
-from worlds.terranil.data.ItemBuildingsLists import RiverValleyBuildings
+from worlds.terranil.data.ItemBuildingsLists import RiverValleyBuildings, DesolateIslandBuildings
 
 
 @dataclass
@@ -123,6 +123,15 @@ def generate_building_id(map_id: int, slot_number: int) -> int:
     slot_bits = slot_number
     return first_bit | classification_bits | map_bits | slot_bits
 
+def generate_building_items_and_toid_dict(source, map: TerraNilMapData) -> tuple[dict, dict]:
+    "Generates a dictionary of building items and ids for a given BuildingEnum and map"
+    buildings_items_dict = dict()
+    buildings_toid_dict = dict()
+    for buildingdata in source:
+        buildings_items_dict[f"{map.displayname} {buildingdata}"] = (ItemClassification.progression)
+        buildings_toid_dict[f"{map.displayname} {buildingdata}"]  = generate_building_id(map.InternalID, buildingdata.get_internalID(ignore_missing_ids = True))
+    return buildings_items_dict, buildings_toid_dict
+
 
 maps_as_items: dict[str, ItemClassification] = dict()
 for displayname, data in all_map_datas.items():
@@ -132,9 +141,8 @@ maps_to_id = {
     f"{displayname} Map": generate_mapunlock_id(map_id=data.InternalID) for displayname, data in all_map_datas.items()
 }
     
-buildings_rivervalley_as_items = dict()
-for displayname in RiverValleyBuildings:
-    buildings_rivervalley_as_items[f"River Valley {displayname}"] = (ItemClassification.progression)
+buildings_rivervalley_as_items, buildings_rivervalley_to_id = generate_building_items_and_toid_dict(RiverValleyBuildings, all_map_datas["River Valley"])
+buildings_desolateisland_as_items, buildings_desolateisland_to_id = generate_building_items_and_toid_dict(DesolateIslandBuildings, all_map_datas["Desolate Island"])
 
 buildings_rivervalley_to_id = {
     f"River Valley {str(x)}" : generate_building_id(get_map_id("River Valley"), int(x)) for x in RiverValleyBuildings
@@ -155,6 +163,10 @@ def main():
         
     print("\nRiver Valley Buildings IDs:")
     for key, value in buildings_rivervalley_to_id.items():
+        print(f"{key:<32}: 0b {value:b}, 0x{value:x}")
+        
+    print("\nRiver Valley Buildings IDs:")
+    for key, value in buildings_desolateisland_to_id.items():
         print(f"{key:<32}: 0b {value:b}, 0x{value:x}")
         
 if __name__ == "__main__":
