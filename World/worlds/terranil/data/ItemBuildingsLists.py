@@ -52,7 +52,7 @@ class RiverValleyBuildings(BuildingEnum):
 class HillAndDaleBuildings(BuildingEnum):
     "The building IDs for all buildings in Hill and Dale"
     Turbine =           (100, "Wind Turbine", 1)
-    ConeFilterInternalName = (999, "Cone Filter", 1)
+    ConeFilter =        (120, "Cone Filter", 1)
     Irrigator =         (102, "Irrigator", 1)
     Excavator =         (103, "Excavator", 1)
     WaterPump =         (104, "Water Pump", 1)
@@ -63,7 +63,7 @@ class HillAndDaleBuildings(BuildingEnum):
     Beehive =           (202, "Beehive", 2)
     Arboretum =         (203, "Arboretum", 2)
     SolarAmplifier =    (205, "Solar Amplifier", 2)
-    ChaparrallumInternalName = (999, "Chaparrallum", 2)
+    Chaparrallum =      (230, "Chaparrallum", 2)
     
     Airship =           (300, "Airship", 3)
     LoadingDock =       (301, "Loading Dock", 3)
@@ -75,15 +75,15 @@ class HillAndDaleBuildings(BuildingEnum):
     AnimalObservatory = (500, "Animal Observatory", 3)
     
     CloudSeeder =       (404, "Cloud Seeder", 4)
-    CombustorInternalName = (999, "Combustor", 4)
+    Combustor =         (402, "Combustor", 4)
 
 
 class PollutedBayBuildings(BuildingEnum):
     "The building IDs for all buildings in Polluted Bay"
-    TidalTurbineInternalName = (999, "Tidal Turbine", 1)
+    TidalTurbine =      (112, "Tidal Turbine", 1)
     ToxinScrubber =     (101, "Toxin Scrubber", 1)
     Irrigator =         (102, "Irrigator", 1)
-    PylonInternalName = (999, "Pylon", 1)
+    Pylon =             (228, "Pylon", 1)
     Excavator =         (103, "Excavator", 1)
     WaterPump =         (104, "Water Pump", 1)
     Calcifier =         (105, "Calcifier", 1)
@@ -93,7 +93,7 @@ class PollutedBayBuildings(BuildingEnum):
     Beehive =           (202, "Beehive", 2)
     Arboretum =         (203, "Arboretum", 2)
     SolarAmplifier =    (205, "Solar Amplifier", 2)
-    ConservatoryInternalName = (999, "Conservatory", 2)
+    Conservatory =      (227, "Conservatory", 2)
     
     Airship =           (300, "Airship", 3)
     LoadingDock =       (301, "Loading Dock", 3)
@@ -113,7 +113,7 @@ class AbandonedQuarryBuildings(BuildingEnum):
     Irrigator =         (102, "Irrigator", 1)
     Excavator =         (103, "Excavator", 1)
     WaterPump =         (104, "Water Pump", 1)
-    SeismicDetonatorInternalName = (999, "Seismic Detonator", 1)
+    SeismicDetonator =  (218, "Seismic Detonator", 1)
     
     ResearchCenter =    (200, "Research Center", 2)
     Hydroponium =       (201, "Hydroponium", 2)
@@ -124,15 +124,15 @@ class AbandonedQuarryBuildings(BuildingEnum):
     Airship =           (300, "Airship", 3)
     RecyclingSilo =     (303, "Recycling Silo", 3)
     RecyclingDrone =    (304, "Recycling Drone", 3)
-    FlyingRecyclingDroneInternalName = (999, "Flying Recycling Drone", 3)
-    StandaloneBeaconInternalName = (999, "Standalone Beacon", 3)
-    RockHopperInternalName = (999, "Rock Hopper", 3)
+    FlyingRecyclingDrone = (307, "Flying Recycling Drone", 3)
+    StandaloneBeacon =  (327, "Standalone Beacon", 3)
+    RockHopper =        (324, "Rock Hopper", 3)
     SonicPulse =        (325, "Sonic Pulse", 3)
     WildlifeBridge =    (326, "Wildlife Bridge", 3)
     AnimalObservatory = (500, "Animal Observatory", 3)
     
     CloudSeeder =       (404, "Cloud Seeder", 4)
-    DehumidifierInternalName = (999, "Dehumidifier", 4)
+    Dehumidifier =      (405, "Dehumidifier", 4)
 
 
 
@@ -144,52 +144,52 @@ class DesolateIslandBuildings(BuildingEnum):
     ToxinScrubber =     (101, "Toxin Scrubber", 1)
     Irrigator =         (102, "Irrigator", 1)
     WaterPump =         (104, "Water Pump", 1)
-    MineralizerInternalName =         (999, "Mineralizer", 1)
-    SandBankInternalName = (999, "Sand Bank", 1)
+    Mineralizer =       (108, "Mineralizer", 1)
+    SandBank =          (107, "Sand Bank", 1)
     
     Hydroponium =       (201, "Hydroponium", 2)
-    LittariumInternalName = (999, "Littarium", 2)
-    SalinatorInternalName = (999, "Salinator", 2)
-    ShadeclothPillarInternalName = (999, "Shadecloth Pillar", 2)
-    MonorailNodeInternalName = (999, "Monorail Node", 2)
-    CoralLabInternalName = (999, "Coral Lab", 2)
+    Littarium =         (209, "Littarium", 2)
+    Salinator =         (208, "Salinator", 2)
+    ShadeclothPillar =  (210, "Shadecloth Pillar", 2)
+    MonorailNode =      (212, "Monorail Node", 2)
+    CoralLab =          (211, "Coral Lab", 2)
     
     Airship =           (300, "Airship", 3)
     RecyclingSilo =     (303, "Recycling Silo", 3)
-    RecyclerStationInternalName = (999, "Recycler Station", 3)
-    RecyclingBeaconInternalName = (999, "Recycling Beacon", 3)
-    RockHopperInternalName = (999, "Rock Hopper", 3)
+    RecyclerStation =   (305, "Recycler Station", 3)
+    RecyclingBeacon =   (306, "Recycling Beacon", 3)
+    RockHopper =        (324, "Rock Hopper", 3)
     SonicPulse =        (325, "Sonic Pulse", 3)
     AnimalObservatory = (500, "Animal Observatory", 3)
     
     CloudSeeder =       (404, "Cloud Seeder", 4)
-    CombustorInternalName = (999, "Combustor", 4)
+    Combustor = (402, "Combustor", 4)
 
 
 class ScorchedCalderaBuildings(BuildingEnum):
     "The building IDs for all buildings in Scorched Caldera"
-    GeothermalPlantInternalName = (999, "Geothermal Plant", 1)
-    SeismicDetonatorInternalName = (999, "Seismic Detonator", 1)
-    ConeFilterInternalName = (999, "Cone Filter", 1)
+    GeothermalPlant =   (110, "Geothermal Plant", 1)
+    SeismicDetonator =  (218, "Seismic Detonator", 1)
+    ConeFilter =        (120, "Cone Filter", 1)
     Irrigator =         (102, "Irrigator", 1)
     Excavator =         (103, "Excavator", 1)
     
-    ShadeclothPillarInternalName = (999, "Shadecloth Pillar", 2)
-    MiniBambooNurseryInternalName = (999, "Mini Bamboo Nursery", 2)
+    ShadeclothPillar =  (210, "Shadecloth Pillar", 2)
+    MiniBambooNurseryInternalName = (223, "Mini Bamboo Nursery", 2)
     PercolotriumInternalName = (999, "Percolotrium", 2)
-    RockHopperInternalName = (999, "Rock Hopper", 2)
-    MonorailNodeInternalName = (999, "Monorail Node", 2)
+    RockHopperInternalName = (324, "Rock Hopper", 2)
+    MonorailNodeInternalName = (212, "Monorail Node", 2)
     TranspiratorInternalName = (999, "Transpirator", 2)
     
     Airship =           (300, "Airship", 3)
     RecyclingSilo =     (303, "Recycling Silo", 3)
-    RecyclerStationInternalName = (999, "Recycler Station", 3)
-    RecyclingBeaconInternalName = (999, "Recycling Beacon", 3)
+    RecyclerStation =   (305, "Recycler Station", 3)
+    RecyclingBeacon =   (306, "Recycling Beacon", 3)
     SonicPulse =        (325, "Sonic Pulse", 3)
     WildlifeBridge =    (326, "Wildlife Bridge", 3)
     AnimalObservatory = (500, "Animal Observatory", 3)
     
-    CombustorInternalName = (999, "Combustor", 4)
+    Combustor =         (402, "Combustor", 4)
 
 
 class ArchipelagoBuildings(BuildingEnum):
@@ -200,14 +200,14 @@ class ArchipelagoBuildings(BuildingEnum):
     Irrigator =         (102, "Irrigator", 1)
     Excavator =         (103, "Excavator", 1)
     WaterPump =         (104, "Water Pump", 1)
-    MineralizerInternalName =         (999, "Mineralizer", 1)
+    Mineralizer =       (108, "Mineralizer", 1)
     
     Hydroponium =       (201, "Hydroponium", 2)
-    LittariumInternalName = (999, "Littarium", 2)
-    SalinatorInternalName = (999, "Salinator", 2)
-    ShadeclothPillarInternalName = (999, "Shadecloth Pillar", 2)
-    MonorailNodeInternalName = (999, "Monorail Node", 2)
-    CoralLabInternalName = (999, "Coral Lab", 2)
+    Littarium =         (209, "Littarium", 2)
+    Salinator =         (208, "Salinator", 2)
+    ShadeclothPillar =  (210, "Shadecloth Pillar", 2)
+    MonorailNode =      (212, "Monorail Node", 2)
+    CoralLab =          (211, "Coral Lab", 2)
     ResearchCenter =    (200, "Research Center", 2)
     
     Airship =           (300, "Airship", 3)
@@ -218,7 +218,7 @@ class ArchipelagoBuildings(BuildingEnum):
     AnimalObservatory = (500, "Animal Observatory", 3)
     
     CloudSeeder =       (404, "Cloud Seeder", 4)
-    CombustorInternalName = (999, "Combustor", 4)
+    Combustor =         (402, "Combustor", 4)
 
 
 
@@ -226,14 +226,14 @@ class ArchipelagoBuildings(BuildingEnum):
 
 class VolcanicGlacierBuildings(BuildingEnum):
     "The building IDs for all buildings in Volcanic Glacier"
-    SeismicDetonatorInternalName = (999, "Seismic Detonator", 1)
-    GeothermalPlantInternalName = (999, "Geothermal Plant", 1)
+    SeismicDetonator =  (218, "Seismic Detonator", 1)
+    GeothermalPlant =   (110, "Geothermal Plant", 1)
     ToxinScrubber =     (101, "Toxin Scrubber", 1)
     Irrigator =         (102, "Irrigator", 1)
     SolarAmplifier =    (205, "Solar Amplifier", 1)
     Excavator =         (103, "Excavator", 1)
     
-    MonorailNodeInternalName = (999, "Monorail Node", 2)
+    MonorailNode =      (212, "Monorail Node", 2)
     Arboretum =         (203, "Arboretum", 2)
     Biodome =           (999, "Biodome", 2)
     RadialExcavator =   (999, "Radial Excavator", 2)
@@ -242,16 +242,16 @@ class VolcanicGlacierBuildings(BuildingEnum):
     
     Airship =           (300, "Airship", 3)
     RecyclingSilo =     (303, "Recycling Silo", 3)
-    RecyclerStationInternalName = (999, "Recycler Station", 3)
-    RecyclingBeaconInternalName = (999, "Recycling Beacon", 3)
-    RockHopperInternalName = (999, "Rock Hopper", 3)
+    RecyclerStation = (305, "Recycler Station", 3)
+    RecyclingBeacon = (306, "Recycling Beacon", 3)
+    RockHopper = (324, "Rock Hopper", 3)
     SonicPulse =        (325, "Sonic Pulse", 3)
     WildlifeBridge =    (326, "Wildlife Bridge", 3)
     AnimalObservatory = (500, "Animal Observatory", 3)
     
     CloudSeeder =       (404, "Cloud Seeder", 4)
-    DehumidifierInternalName = (999, "Dehumidifier", 4)
-    CombustorInternalName = (999, "Combustor", 4)
+    Dehumidifier =      (405, "Dehumidifier", 4)
+    Combustor =         (402, "Combustor", 4)
     FlashFreezer =      (999, "Flash Freezer", 4)
 
 
@@ -267,52 +267,52 @@ class SubpolarRiverBuildings(BuildingEnum):
     Arboretum =         (203, "Arboretum", 2)
     Biodome =           (999, "Biodome", 2)
     AlgaeGreenhouse =   (999, "Algae Greenhouse", 2)
-    ChaparrallumInternalName = (999, "Chaparrallum", 2)
+    Chaparrallum = (230, "Chaparrallum", 2)
     
     Airship =           (300, "Airship", 3)
     RecyclingSilo =     (303, "Recycling Silo", 3)
     RecyclingDrone =    (304, "Recycling Drone", 3)
-    FlyingRecyclingDroneInternalName = (999, "Flying Recycling Drone", 3)
-    StandaloneBeaconInternalName = (999, "Standalone Beacon", 3)
-    RockHopperInternalName = (999, "Rock Hopper", 3)
+    FlyingRecyclingDrone = (307, "Flying Recycling Drone", 3)
+    StandaloneBeaconInternalName = (327, "Standalone Beacon", 3)
+    RockHopper = (324, "Rock Hopper", 3)
     SonicPulse =        (325, "Sonic Pulse", 3)
     WildlifeBridge =    (326, "Wildlife Bridge", 3)
     AnimalObservatory = (500, "Animal Observatory", 3)
     
     CloudSeeder =       (404, "Cloud Seeder", 4)
-    DehumidifierInternalName = (999, "Dehumidifier", 4)
-    CombustorInternalName = (999, "Combustor", 4)
+    Dehumidifier = (405, "Dehumidifier", 4)
+    Combustor = (402, "Combustor", 4)
     FlashFreezer =      (999, "Flash Freezer", 4)
 
 
 class PollutedFjordBuildings(BuildingEnum):
     "The building IDs for all buildings in Polluted Fjord"
     Turbine =           (100, "Wind Turbine", 1)
-    TidalTurbineInternalName = (999, "Tidal Turbine", 1)
+    TidalTurbine = (112, "Tidal Turbine", 1)
     ToxinScrubber =     (101, "Toxin Scrubber", 1)
     Irrigator =         (102, "Irrigator", 1)
     SolarAmplifier =    (205, "Solar Amplifier", 1)
     WaterPump =         (104, "Water Pump", 1)
     Calcifier =         (105, "Calcifier", 1)
     
-    MonorailNodeInternalName = (999, "Monorail Node", 2)
+    MonorailNodeInternalName = (212, "Monorail Node", 2)
     Arboretum =         (203, "Arboretum", 2)
     Biodome =           (999, "Biodome", 2)
     AlgaeGreenhouse =   (999, "Algae Greenhouse", 2)
-    RockHopperInternalName = (999, "Rock Hopper", 2)
+    RockHopper =        (324, "Rock Hopper", 2)
     Excavator =         (103, "Excavator", 2)
     
     Airship =           (300, "Airship", 3)
     RecyclingSilo =     (303, "Recycling Silo", 3)
-    RecyclerStationInternalName = (999, "Recycler Station", 3)
-    RecyclingBeaconInternalName = (999, "Recycling Beacon", 3)
+    RecyclerStation = (305, "Recycler Station", 3)
+    RecyclingBeacon = (306, "Recycling Beacon", 3)
     SonicPulse =        (325, "Sonic Pulse", 3)
     WildlifeBridge =    (326, "Wildlife Bridge", 3)
     AnimalObservatory = (500, "Animal Observatory", 3)
     
     CloudSeeder =       (404, "Cloud Seeder", 4)
-    DehumidifierInternalName = (999, "Dehumidifier", 4)
-    CombustorInternalName = (999, "Combustor", 4)
+    Dehumidifier = (405, "Dehumidifier", 4)
+    Combustor = (402, "Combustor", 4)
     FlashFreezer =      (999, "Flash Freezer", 4)
 
 
@@ -322,26 +322,26 @@ class PollutedFjordBuildings(BuildingEnum):
 class FloodedCityBuildings(BuildingEnum):
     "The building IDs for all buildings in Flooded City"
     UnderseaDredge =    (999, "Undersea Dredger", 1)
-    TidalTurbineInternalName = (999, "Tidal Turbine", 1)
+    TidalTurbine = (112, "Tidal Turbine", 1)
     LoadingDock =       (301, "Loading Dock", 1)
-    MonorailNodeInternalName = (999, "Monorail Node", 1)
+    MonorailNodeInternalName = (212, "Monorail Node", 1)
     ToxinScrubber =     (101, "Toxin Scrubber", 1)
     Irrigator =         (102, "Irrigator", 1)
-    SeismicDetonatorInternalName = (999, "Seismic Detonator", 1)
+    SeismicDetonator = (218, "Seismic Detonator", 1)
     
     MineralizerInternalName =         (999, "Mineralizer", 2)
     ThalassicPurifier = (999, "Thalassic Purifier", 2)
     BambooNursery =(999, "Bamboo Nursery", 2)
-    ConservatoryInternalName = (999, "Conservatory", 2)
+    Conservatory = (227, "Conservatory", 2)
     RadiationCleanser = (999, "Radiation Cleanser", 2)
     PylonInternalName = (999, "Pylon", 2)
     Heliocage = (999, "Heliocage", 2)
     
-    FlyingRecyclingDroneInternalName = (999, "Flying Recycling Drone", 3)
+    FlyingRecyclingDrone = (307, "Flying Recycling Drone", 3)
     SatelliteUplink = (999, "Satellite Uplink", 3)
     RocketSilo = (999, "Rocket Silo", 3)
-    RecyclingSilo =     (303, "Recycling Silo")
-    StandaloneBeaconInternalName = (999, "Standalone Beacon", 3)
+    RecyclingSilo =     (303, "Recycling Silo", 3)
+    StandaloneBeaconInternalName = (327, "Standalone Beacon", 3)
     SonicPulse =        (325, "Sonic Pulse", 3)
     AnimalObservatory = (500, "Animal Observatory", 3)
     
@@ -356,8 +356,8 @@ class FloodedCityBuildings(BuildingEnum):
     SeedVaultCockpit = (999, "Seed Vault Cockpit", 3)
     
     CloudSeeder =       (404, "Cloud Seeder", 4)
-    DehumidifierInternalName = (999, "Dehumidifier", 4)
-    CombustorInternalName = (999, "Combustor", 4)
+    Dehumidifier = (405, "Dehumidifier", 4)
+    Combustor = (402, "Combustor", 4)
     FlashFreezer =      (999, "Flash Freezer", 4)
 
 
@@ -366,56 +366,56 @@ class IrradiatedSprawlBuildings(BuildingEnum):
     Turbine =           (100, "Turbine", 1)
     ToxinScrubber =     (101, "Toxin Scrubber", 1)
     Irrigator =         (102, "Irrigator", 1)
-    PylonInternalName = (999, "Pylon", 1)
+    Pylon = (228, "Pylon", 1)
     RadiationCleanser = (999, "Radiation Cleanser", 1)
-    MonorailNodeInternalName = (999, "Monorail Node", 1)
+    MonorailNodeInternalName = (212, "Monorail Node", 1)
     
     MineralizerInternalName =         (999, "Mineralizer", 2)
     ThalassicPurifier = (999, "Thalassic Purifier", 2)
     BambooNursery =(999, "Bamboo Nursery", 2)
-    ConservatoryInternalName = (999, "Conservatory", 2)
+    Conservatory = (227, "Conservatory", 2)
     Heliocage = (999, "Heliocage", 2)
     
     Airship =           (300, "Airship", 3)
     RecyclingSilo =     (303, "Recycling Silo", 3)
-    RecyclerStationInternalName = (999, "Recycler Station", 3)
-    # MonorailNodeInternalName = (999, "Monorail Node", 2) ##Duplicate
-    RecyclingBeaconInternalName = (999, "Recycling Beacon", 3)
+    RecyclerStation = (305, "Recycler Station", 3)
+    # MonorailNodeInternalName = (212, "Monorail Node", 3) ##Duplicate
+    RecyclingBeacon = (306, "Recycling Beacon", 3)
     SonicPulse =        (325, "Sonic Pulse", 3)
     AnimalObservatory = (500, "Animal Observatory", 3)
     
     CloudSeeder =       (404, "Cloud Seeder", 4)
-    DehumidifierInternalName = (999, "Dehumidifier", 4)
-    CombustorInternalName = (999, "Combustor", 4)
+    Dehumidifier = (405, "Dehumidifier", 4)
+    Combustor = (402, "Combustor", 4)
     FlashFreezer =      (999, "Flash Freezer", 4)
 
 
 class ContinentalOutskirtsBuildings(BuildingEnum):
     "The building IDs for all buildings in Continental Outskirts"
-    PylonInternalName = (999, "Pylon", 1)
-    ConeFilterInternalName = (999, "Cone Filter", 1)
+    Pylon = (228, "Pylon", 1)
+    ConeFilter = (120, "Cone Filter", 1)
     PipeHub =           (999, "Pipe Hub", 1)
     WaterPump =         (104, "Water Pump", 1)
-    Calcifier =         (105, "Calcifier")
+    Calcifier =         (105, "Calcifier", 1)
     Excavator =         (103, "Excavator", 1)
     
-    Beehive =           (202, "Beehive")
-    ConservatoryInternalName = (999, "Conservatory", 2)
+    Beehive =           (202, "Beehive", 2)
+    Conservatory = (227, "Conservatory", 2)
     BambooNursery =(999, "Bamboo Nursery", 2)
-    RockHopperInternalName = (999, "Rock Hopper", 2)
+    RockHopperInternalName = (324, "Rock Hopper", 2)
     
     Airship =           (300, "Airship", 3)
     RecyclingSilo =     (303, "Recycling Silo", 3)
     RecyclingDrone =    (304, "Recycling Drone", 3)
-    FlyingRecyclingDroneInternalName = (999, "Flying Recycling Drone", 3)
-    StandaloneBeaconInternalName = (999, "Standalone Beacon", 3)
+    FlyingRecyclingDrone = (307, "Flying Recycling Drone", 3)
+    StandaloneBeaconInternalName = (327, "Standalone Beacon", 3)
     SonicPulse =        (325, "Sonic Pulse", 3)
     WildlifeBridge =    (326, "Wildlife Bridge", 3)
     AnimalObservatory = (500, "Animal Observatory", 3)
     
     CloudSeeder =       (404, "Cloud Seeder", 4)
-    DehumidifierInternalName = (999, "Dehumidifier", 4)
-    CombustorInternalName = (999, "Combustor", 4)
+    Dehumidifier = (405, "Dehumidifier", 4)
+    Combustor = (402, "Combustor", 4)
     FlashFreezer =      (999, "Flash Freezer", 4)
 
 
@@ -427,7 +427,7 @@ class ParchedDunesBuildings(BuildingEnum):
     Aqueduct = (999, "Aqueduct", 1)
     SolarArray = (999, "Solar Array", 1)
     SandHelix = (999, "Sand Helix", 1)
-    ConeFilterInternalName = (999, "Cone Filter", 1)
+    ConeFilter = (120, "Cone Filter", 1)
     Irrigator =         (102, "Irrigator", 1)
         
     SolarAmplifier =    (205, "Solar Amplifier", 2)
@@ -449,8 +449,8 @@ class ParchedDunesBuildings(BuildingEnum):
     AnimalObservatory = (500, "Animal Observatory", 3)
     
     CloudSeeder =       (404, "Cloud Seeder", 4)
-    DehumidifierInternalName = (999, "Dehumidifier", 4)
-    CombustorInternalName = (999, "Combustor", 4)
+    Dehumidifier = (405, "Dehumidifier", 4)
+    Combustor = (402, "Combustor", 4)
     FlashFreezer =      (999, "Flash Freezer", 4)
     Calcifier =         (105, "Calcifier", 4)
 
@@ -464,11 +464,11 @@ class CanyonPeaksBuildings(BuildingEnum):
     ResearchCenter =    (200, "Research Center", 1)
     
     Beehive =           (202, "Beehive", 2)
-    ChaparrallumInternalName = (999, "Chaparrallum", 2)
+    Chaparrallum = (230, "Chaparrallum", 2)
     Xerophytium =       (999, "Xerophytium", 2)
     Heliocage = (999, "Heliocage", 2)
     Arboretum =         (203, "Arboretum", 2)
-    RockHopperInternalName = (999, "Rock Hopper", 2)
+    RockHopperInternalName = (324, "Rock Hopper", 2)
     DehumidifierInternalName = (999, "Dehumidifier", 2)
     
     Airship =           (300, "Airship", 3)
@@ -480,41 +480,41 @@ class CanyonPeaksBuildings(BuildingEnum):
     
     CloudSeeder =       (404, "Cloud Seeder", 4)
     # DehumidifierInternalName = (999, "Dehumidifier", 4) ##Duplicate
-    CombustorInternalName = (999, "Combustor", 4)
+    Combustor = (402, "Combustor", 4)
     FlashFreezer =      (999, "Flash Freezer", 4)
 
 
 class FrackedFloodplainBuildings(BuildingEnum):
     "The building IDs for all buildings in Fracked Floodplain"
     SolarArray = (999, "Solar Array", 1)
-    ConeFilterInternalName = (999, "Cone Filter", 1)
+    ConeFilter = (120, "Cone Filter", 1)
     Irrigator =         (102, "Irrigator", 1)
     HyacinthGerminator = (999, "Hyacinth Germinator", 1)
-    SeismicDetonatorInternalName = (999, "Seismic Detonator", 1)
+    SeismicDetonator = (218, "Seismic Detonator", 1)
     SandHelix = (999, "Sand Helix", 1)
     
     BiofuelExtractor = (999, "Biofuel Extractor", 2)
     # Calcifier =         (105, "Calcifier", 2)   ##Duplicate
     Hydroponium =       (201, "Hydroponium", 2)
-    ChaparrallumInternalName = (999, "Chaparrallum", 2)
+    Chaparrallum = (230, "Chaparrallum", 2)
     BirdSanctuary = (999, "Bird Sanctuary", 2)
     SavannahSeeder =    (999, "Savannah Seeder", 2)
     # ##Dehumidifier
     SonicPulse =        (325, "Sonic Pulse", 2)
     
     RecyclingRover = (999, "Recycling Rover", 3)
-    MonorailNodeInternalName = (999, "Monorail Node", 3)
+    MonorailNodeInternalName = (212, "Monorail Node", 3)
     RecyclingSilo =     (303, "Recycling Silo", 3)
     RocketThrusters = (999, "Rocket Thrusters", 3)
     AricCommsArray = (999, "Arid Comms Array", 3)
     Cockpit = (999, "Cockpit", 3)
     # ##Sonic Pulse
     WildlifeBridge =    (326, "Wildlife Bridge", 3)
-    AnimalObservatory = (500, "Animal Observatory")
+    AnimalObservatory = (500, "Animal Observatory", 3)
     
     CloudSeeder =       (404, "Cloud Seeder", 4)
-    DehumidifierInternalName = (999, "Dehumidifier", 4)
-    CombustorInternalName = (999, "Combustor", 4)
+    Dehumidifier = (405, "Dehumidifier", 4)
+    Combustor = (402, "Combustor", 4)
     FlashFreezer =      (999, "Flash Freezer", 4)
     Calcifier =         (105, "Calcifier", 4)
     
@@ -542,28 +542,31 @@ all_building_enums_list = [
     FrackedFloodplainBuildings
 ]
 
-def test_building_enum(enum_to_test):
-    print()
+def test_building_enum(enum_to_test: BuildingEnum, test_id: bool = True, test_tier: bool = True) -> bool:
+    has_erred = False
+    print(f"\nMap: {enum_to_test.__name__}")
     for i in enum_to_test:
-        display_name = i.get_displayname()
-        try:
-            building_id = i.get_internal_id()
-        except NotImplementedError:
-            print(f"Building {display_name:<30} has unknown ID (999).")
-        
-        try: 
-            tier_number = i.get_tier()
-        except KeyError:
-            print(f"Building {display_name} has no assigned tier.")
+        display_name = i.get_displayName()
+        if test_id:
+            try:
+                building_id = i.get_internalID()
+            except NotImplementedError:
+                print(f"Building {display_name:<30} has unknown ID (999).")
+                has_erred = True
+            
+        if test_tier:
+            try: 
+                tier_number = i.get_tier()
+            except IndexError:
+                print(f"Building {display_name} has no assigned tier.")
+                has_erred = True
+                
+    return has_erred
         
 
 def main():
-    test_building_enum(RiverValleyBuildings)
-    test_building_enum(HillAndDaleBuildings)
-    test_building_enum(PollutedBayBuildings)
-    test_building_enum(AbandonedQuarryBuildings)
-    test_building_enum(DesolateIslandBuildings)
-    test_building_enum(ScorchedCalderaBuildings)
+    for i in all_building_enums_list:
+        test_building_enum(i, True, True)
 
 if __name__ == "__main__":
     main()    
