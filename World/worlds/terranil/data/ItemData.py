@@ -65,7 +65,7 @@ def get_map_internal_name(map_name: str) -> str:
 
 
 
-# THis world considers all of its own item IDs to be 32 bit
+# This world considers all of its own item IDs to be 32 bit
 # Any ID with the highest order bit set is treated in a special way by the client mod
 # All other IDs are just normal numbers that cover any items that do not fit the following schema
 #
