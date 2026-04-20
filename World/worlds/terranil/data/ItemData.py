@@ -35,7 +35,7 @@ class TerraNilMapData:
 all_map_datas = {
     "River Valley":          TerraNilMapData(displayname = "River Valley",          region = "Temperate", InternalID= 10, InternalName= "TemperateRiver"),
     "Abandoned Quarry":      TerraNilMapData(displayname = "Abandoned Quarry",      region = "Temperate", InternalID= 11, InternalName= "TemperateQuarry"),
-    "Polluted Bay":          TerraNilMapData(displayname = "Polluted Bay",          region = "Temperate", InternalID= 11, InternalName= "TemperateBay"),
+    "Polluted Bay":          TerraNilMapData(displayname = "Polluted Bay",          region = "Temperate", InternalID= 12, InternalName= "TemperateBay"),
     "Hill and Dale":         TerraNilMapData(displayname = "Hill and Dale",         region = "Temperate", InternalID= 13, InternalName= "TemperateHillAndDale"),
 
     "Desolate Island":       TerraNilMapData(displayname = "Desolate Island",       region = "Tropical", InternalID= 20, InternalName= "TropicalIsland"),
