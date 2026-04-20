@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace TerraNilAP.MissionLogic;
 
-class RiverValleyLogic : IMissionLogic
+class DesolateIslandLogic : IMissionLogic
 {
     private Dictionary<string, long> names = new Dictionary<string, long>();
     private long
@@ -15,63 +15,70 @@ class RiverValleyLogic : IMissionLogic
         firstPollution,
         firstGreenery,
         firstWater,
-        firstFire,
         t1p25,
         t1p50,
         t1p75,
         t1p100,
-        t2fynbos1,
-        t2fynbos100,
-        t2wetland1,
-        t2wetland100,
-        t2forest1,
-        t2forest100,
+        t2beach1,
+        t2beach100,
+        t2mangrove1,
+        t2mangrove100,
+        t2rainforest1,
+        t2rainforest100,
+        t2coralreef1,
+        t2coralreef100,
         t3recycle1,
         t3recycle100,
         t3photo3,
         t3photo10;
 
-    public RiverValleyLogic()
+    public DesolateIslandLogic()
     {
         firstPower = this.Location(1);
         firstPollution = this.Location(2);
         firstGreenery = this.Location(3);
         firstWater = this.Location(4);
-        firstFire = this.Location(13);
         t1p25 = this.Location(5);
         t1p50 = this.Location(6);
         t1p75 = this.Location(7);
         t1p100 = this.Location(8);
-        t2fynbos1 = this.Location(10);
-        t2fynbos100 = this.Location(14);
-        t2wetland1 = this.Location(11);
-        t2wetland100 = this.Location(15);
-        t2forest1 = this.Location(12);
-        t2forest100 = this.Location(16);
+        t2beach1 = this.Location(10);
+        t2beach100 = this.Location(14);
+        t2mangrove1 = this.Location(11);
+        t2mangrove100 = this.Location(15);
+        t2rainforest1 = this.Location(12);
+        t2rainforest100 = this.Location(16);
+        t2coralreef1 = this.Location(13);
+        t2coralreef100 = this.Location(17);
         t3recycle1 = this.Location(18);
         t3recycle100 = this.Location(19);
         t3photo3 = this.Location(20);
         t3photo10 = this.Location(21);
 
-        names.Add("Wildflowers", this.Location(31));
+        names.Add("IvyOnBuildings", this.Location(33));
+        names.Add("Jellyfish", this.Location(31));
+        names.Add("Crabs", this.Location(28));
+        names.Add("PalmsOnBeaches", this.Location(29));
         names.Add("SpawnOverheadBirds", this.Location(27));
-        names.Add("Mushrooms", this.Location(29));
-        names.Add("Ferns", this.Location(28));
-        names.Add("Lilypads", this.Location(26));
-        names.Add("Salmon", this.Location(32));
-        names.Add("WeatherRestored", this.Location(30));
+        names.Add("Ferns", this.Location(32));
+        names.Add("VinesOnMonorail", this.Location(34));
+        names.Add("Lilypads", this.Location(35));
+        names.Add("Dragonflies", this.Location(30));
+        names.Add("MossyCliffs", this.Location(26));
+        names.Add("WeatherRestored", this.Location(36));
     }
 
     public Mission Target()
     {
-        return Mission.TemperateRiver;
+        return Mission.TropicalIsland;
     }
 
     public void Update(GameState state)
     {
-        var fynbosTarget = state.progressionState.Tier2SingleTarget(Type.Fynbos);
-        var wetlandTarget = state.progressionState.Tier2SingleTarget(Type.Wetland);
-        var forestTarget = state.progressionState.Tier2SingleTarget(Type.Forest);
+        var beachTarget = state.progressionState.Tier2SingleTarget(Type.Beach);
+        var mangroveTarget = state.progressionState.Tier2SingleTarget(Type.Mangroves);
+        var rainforestTarget = state.progressionState.Tier2SingleTarget(Type.TropicalForest);
+        var coralreefTarget = state.progressionState.Tier2SingleTarget(Type.Coral);
 
         foreach (var tile in state.mapState.map)
         {
@@ -106,14 +113,6 @@ class RiverValleyLogic : IMissionLogic
                     TerraNilAP.Session.Locations.CompleteLocationChecks(new long[] {firstWater});
                 }
             }
-
-            if (TerraNilAP.Session.Locations.AllMissingLocations.Contains(firstFire))
-            {
-                if (tile.isOnFire)
-                {
-                    TerraNilAP.Session.Locations.CompleteLocationChecks(new long[] {firstFire});
-                }
-            }
         }
 
         if (state.progressionState.Tier1Progress >= 0.25 && TerraNilAP.Session.Locations.AllMissingLocations.Contains(t1p25))
@@ -136,34 +135,44 @@ class RiverValleyLogic : IMissionLogic
             TerraNilAP.Session.Locations.CompleteLocationChecks(new long[] {t1p100});
         }
 
-        if (state.progressionState.Tier2ProgressDict.GetValueSafe(Type.Fynbos) >= (fynbosTarget * 0.02) && TerraNilAP.Session.Locations.AllMissingLocations.Contains(t2fynbos1))
+        if (state.progressionState.Tier2ProgressDict.GetValueSafe(Type.Beach) >= (beachTarget * 0.02) && TerraNilAP.Session.Locations.AllMissingLocations.Contains(t2beach1))
         {
-            TerraNilAP.Session.Locations.CompleteLocationChecks(new long[] {t2fynbos1});
+            TerraNilAP.Session.Locations.CompleteLocationChecks(new long[] {t2beach1});
         }
 
-        if (state.progressionState.Tier2ProgressDict.GetValueSafe(Type.Fynbos) >= fynbosTarget && TerraNilAP.Session.Locations.AllMissingLocations.Contains(t2fynbos100))
+        if (state.progressionState.Tier2ProgressDict.GetValueSafe(Type.Beach) >= beachTarget && TerraNilAP.Session.Locations.AllMissingLocations.Contains(t2beach100))
         {
-            TerraNilAP.Session.Locations.CompleteLocationChecks(new long[] {t2fynbos100});
+            TerraNilAP.Session.Locations.CompleteLocationChecks(new long[] {t2beach100});
         }
 
-        if (state.progressionState.Tier2ProgressDict.GetValueSafe(Type.Wetland) >= (wetlandTarget * 0.02) && TerraNilAP.Session.Locations.AllMissingLocations.Contains(t2wetland1))
+        if (state.progressionState.Tier2ProgressDict.GetValueSafe(Type.Mangroves) >= (mangroveTarget * 0.02) && TerraNilAP.Session.Locations.AllMissingLocations.Contains(t2mangrove1))
         {
-            TerraNilAP.Session.Locations.CompleteLocationChecks(new long[] {t2wetland1});
+            TerraNilAP.Session.Locations.CompleteLocationChecks(new long[] {t2mangrove1});
         }
 
-        if (state.progressionState.Tier2ProgressDict.GetValueSafe(Type.Wetland) >= wetlandTarget && TerraNilAP.Session.Locations.AllMissingLocations.Contains(t2wetland100))
+        if (state.progressionState.Tier2ProgressDict.GetValueSafe(Type.Mangroves) >= mangroveTarget && TerraNilAP.Session.Locations.AllMissingLocations.Contains(t2mangrove100))
         {
-            TerraNilAP.Session.Locations.CompleteLocationChecks(new long[] {t2wetland100});
+            TerraNilAP.Session.Locations.CompleteLocationChecks(new long[] {t2mangrove100});
         }
 
-        if (state.progressionState.Tier2ProgressDict.GetValueSafe(Type.Forest) >= (forestTarget * 0.02) && TerraNilAP.Session.Locations.AllMissingLocations.Contains(t2forest1))
+        if (state.progressionState.Tier2ProgressDict.GetValueSafe(Type.TropicalForest) >= (rainforestTarget * 0.02) && TerraNilAP.Session.Locations.AllMissingLocations.Contains(t2rainforest1))
         {
-            TerraNilAP.Session.Locations.CompleteLocationChecks(new long[] {t2forest1});
+            TerraNilAP.Session.Locations.CompleteLocationChecks(new long[] {t2rainforest1});
         }
 
-        if (state.progressionState.Tier2ProgressDict.GetValueSafe(Type.Forest) >= forestTarget && TerraNilAP.Session.Locations.AllMissingLocations.Contains(t2forest100))
+        if (state.progressionState.Tier2ProgressDict.GetValueSafe(Type.TropicalForest) >= rainforestTarget && TerraNilAP.Session.Locations.AllMissingLocations.Contains(t2rainforest100))
         {
-            TerraNilAP.Session.Locations.CompleteLocationChecks(new long[] {t2forest100});
+            TerraNilAP.Session.Locations.CompleteLocationChecks(new long[] {t2rainforest100});
+        }
+
+        if (state.progressionState.Tier2ProgressDict.GetValueSafe(Type.Coral) >= (coralreefTarget * 0.02) && TerraNilAP.Session.Locations.AllMissingLocations.Contains(t2coralreef1))
+        {
+            TerraNilAP.Session.Locations.CompleteLocationChecks(new long[] {t2coralreef1});
+        }
+
+        if (state.progressionState.Tier2ProgressDict.GetValueSafe(Type.Coral) >= coralreefTarget && TerraNilAP.Session.Locations.AllMissingLocations.Contains(t2coralreef100))
+        {
+            TerraNilAP.Session.Locations.CompleteLocationChecks(new long[] {t2coralreef100});
         }
 
         if (state.progressionState.ProgressionTier == 3 && state.progressionState.Tier3RecyclingProgress >= 0.01 && TerraNilAP.Session.Locations.AllMissingLocations.Contains(t3recycle1))
@@ -186,18 +195,15 @@ class RiverValleyLogic : IMissionLogic
             TerraNilAP.Session.Locations.CompleteLocationChecks(new long[] {t3photo10});
         }
 
-        if (state.hasResearchCenterBeenPlaced)
+        var missionData = (MissionData)state.climateState.GetType().GetField("_mission", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(state.climateState);
+        foreach (var cond in missionData.climateData.climateConditions)
         {
-            var missionData = (MissionData)state.climateState.GetType().GetField("_mission", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(state.climateState);
-            foreach (var cond in missionData.climateData.climateConditions)
+            if (cond.Evaluate(state.climateState))
             {
-                if (cond.Evaluate(state.climateState))
+                var id = names.GetValueSafe(cond.keyWhenTrue);
+                if (TerraNilAP.Session.Locations.AllMissingLocations.Contains(id))
                 {
-                    var id = names.GetValueSafe(cond.keyWhenTrue);
-                    if (TerraNilAP.Session.Locations.AllMissingLocations.Contains(id))
-                    {
-                        TerraNilAP.Session.Locations.CompleteLocationChecks(new long[] { id });
-                    }
+                    TerraNilAP.Session.Locations.CompleteLocationChecks(new long[] { id });
                 }
             }
         }

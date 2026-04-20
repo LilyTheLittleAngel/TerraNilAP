@@ -2,10 +2,12 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from BaseClasses import ItemClassification, Location
 from . import items
+from .missions import Mission
 if TYPE_CHECKING:
     from .world import TerraNilWorld
 
-RIVER_VALLEY = (1<<31) | (10<<12)
+RIVER_VALLEY = (1<<31) | (int(Mission.RiverValley)<<12)
+DESOLATE_ISLAND = (1<<31) | (int(Mission.DesolateIsland)<<12)
 
 LOCATION_NAME_TO_ID = {
     "First Energy (River Valley)": RIVER_VALLEY | 1,
@@ -40,6 +42,44 @@ LOCATION_NAME_TO_ID = {
     "Rains Begin (River Valley)": RIVER_VALLEY | 30,
     "Wildflower Blooms (River Valley)": RIVER_VALLEY | 31,
     "Salmon Run (River Valley)": RIVER_VALLEY | 32,
+
+    "First Energy (Desolate Island)": DESOLATE_ISLAND | 1,
+    "First Pollution Removed (Desolate Island)": DESOLATE_ISLAND | 2,
+    "First Greenery (Desolate Island)": DESOLATE_ISLAND | 3,
+    "First River (Desolate Island)": DESOLATE_ISLAND | 4,
+    "Greenery 25% (Desolate Island)": DESOLATE_ISLAND | 5,
+    "Greenery 50% (Desolate Island)": DESOLATE_ISLAND | 6,
+    "Greenery 75% (Desolate Island)": DESOLATE_ISLAND | 7,
+    "Greenery 100% (Desolate Island)": DESOLATE_ISLAND | 8,
+
+    "First Beach (Desolate Island)": DESOLATE_ISLAND | 10,
+    "First Mangrove (Desolate Island)": DESOLATE_ISLAND | 11,
+    "First Rainforest (Desolate Island)": DESOLATE_ISLAND | 12,
+    "First Coral Reef (Desolate Island)": DESOLATE_ISLAND | 13,
+    "Beach Completed (Desolate Island)": DESOLATE_ISLAND | 14,
+    "Mangrove Completed (Desolate Island)": DESOLATE_ISLAND | 15,
+    "Rainforest Completed (Desolate Island)": DESOLATE_ISLAND | 16,
+    "Coral Reef Completed (Desolate Island)": DESOLATE_ISLAND | 17,
+
+    "First Recycling (Desolate Island)": DESOLATE_ISLAND | 18,
+    "Recycling Completed (Desolate Island)": DESOLATE_ISLAND | 19,
+    "3 Photo Stars (Desolate Island)": DESOLATE_ISLAND | 20,
+    "10 Photo Stars (Desolate Island)": DESOLATE_ISLAND | 21,
+    "Bronze Photo (Desolate Island)": DESOLATE_ISLAND | 22,
+    "Silver Photo (Desolate Island)": DESOLATE_ISLAND | 23,
+    "Gold Photo (Desolate Island)": DESOLATE_ISLAND | 24,
+
+    "Moss On Rock Faces (Desolate Island)": DESOLATE_ISLAND | 26,
+    "Migratory Birds Return (Desolate Island)": DESOLATE_ISLAND | 27,
+    "Crabs Populate Beaches (Desolate Island)": DESOLATE_ISLAND | 28,
+    "Coconut Palms (Desolate Island)": DESOLATE_ISLAND | 29,
+    "Dragonflies (Desolate Island)": DESOLATE_ISLAND | 30,
+    "Jellyfish Return (Desolate Island)": DESOLATE_ISLAND | 31,
+    "Ferns On Riverbanks (Desolate Island)": DESOLATE_ISLAND | 32,
+    "Ivy Overgrowth (Desolate Island)": DESOLATE_ISLAND | 33,
+    "Vines Grow (Desolate Island)": DESOLATE_ISLAND | 34,
+    "Waterlilies Blossom (Desolate Island)": DESOLATE_ISLAND | 35,
+    "Thunderstorms Begin (Desolate Island)": DESOLATE_ISLAND | 36,
 }
 
 class TerraNilLocation(Location):
@@ -56,6 +96,9 @@ def create_regular_locations(world: TerraNilWorld) -> None:
     rivervalleyt1 = world.get_region("River Valley Tier 1")
     rivervalleyt2 = world.get_region("River Valley Tier 2")
     rivervalleyt3 = world.get_region("River Valley Tier 3")
+    desolateislandt1 = world.get_region("Desolate Island Tier 1")
+    desolateislandt2 = world.get_region("Desolate Island Tier 2")
+    desolateislandt3 = world.get_region("Desolate Island Tier 3")
 
     rivervalleyt1.add_locations(get_location_names_with_ids([
         "First Energy (River Valley)",
@@ -100,10 +143,61 @@ def create_regular_locations(world: TerraNilWorld) -> None:
             "Salmon Run (River Valley)",
         ]), TerraNilLocation)
 
+    desolateislandt1.add_locations(get_location_names_with_ids([
+        "First Energy (Desolate Island)",
+        "First Pollution Removed (Desolate Island)",
+        "First Greenery (Desolate Island)",
+        "First River (Desolate Island)",
+        "Greenery 25% (Desolate Island)",
+        "Greenery 50% (Desolate Island)",
+        "Greenery 75% (Desolate Island)",
+        "Greenery 100% (Desolate Island)",
+    ]), TerraNilLocation)
+
+    desolateislandt2.add_locations(get_location_names_with_ids([
+        "First Beach (Desolate Island)",
+        "First Mangrove (Desolate Island)",
+        "First Rainforest (Desolate Island)",
+        "First Coral Reef (Desolate Island)",
+        "Beach Completed (Desolate Island)",
+        "Mangrove Completed (Desolate Island)",
+        "Rainforest Completed (Desolate Island)",
+        "Coral Reef Completed (Desolate Island)",
+    ]), TerraNilLocation)
+
+    desolateislandt3.add_locations(get_location_names_with_ids([
+        "First Recycling (Desolate Island)",
+        "Recycling Completed (Desolate Island)",
+        "3 Photo Stars (Desolate Island)",
+        "10 Photo Stars (Desolate Island)",
+        "Bronze Photo (Desolate Island)",
+        "Silver Photo (Desolate Island)",
+        "Gold Photo (Desolate Island)",
+    ]), TerraNilLocation)
+
+    if world.options.climate_goals:
+        desolateislandclimate = world.get_region("Desolate Island Climate Goals")
+        desolateislandclimate.add_locations(get_location_names_with_ids([
+            "Moss On Rock Faces (Desolate Island)",
+            "Migratory Birds Return (Desolate Island)",
+            "Crabs Populate Beaches (Desolate Island)",
+            "Coconut Palms (Desolate Island)",
+            "Dragonflies (Desolate Island)",
+            "Jellyfish Return (Desolate Island)",
+            "Ferns On Riverbanks (Desolate Island)",
+            "Ivy Overgrowth (Desolate Island)",
+            "Vines Grow (Desolate Island)",
+            "Waterlilies Blossom (Desolate Island)",
+            "Thunderstorms Begin (Desolate Island)",
+        ]), TerraNilLocation)
+
 def create_events(world: TerraNilWorld) -> None:
     rivervalleyt1 = world.get_region("River Valley Tier 1")
     rivervalleyt2 = world.get_region("River Valley Tier 2")
     rivervalleyt3 = world.get_region("River Valley Tier 3")
+    desolateislandt1 = world.get_region("Desolate Island Tier 1")
+    desolateislandt2 = world.get_region("Desolate Island Tier 2")
+    desolateislandt3 = world.get_region("Desolate Island Tier 3")
 
     rivervalleyt1.add_event(
         "Tier 1 Completed (River Valley)",
@@ -122,6 +216,27 @@ def create_events(world: TerraNilWorld) -> None:
     rivervalleyt3.add_event(
         "Liftoff (River Valley)",
         "Liftoff (River Valley)",
+        location_type=TerraNilLocation,
+        item_type=items.TerraNilItem
+    )
+
+    desolateislandt1.add_event(
+        "Tier 1 Completed (Desolate Island)",
+        "Tier 1 Completed (Desolate Island)",
+        location_type=TerraNilLocation,
+        item_type=items.TerraNilItem
+    )
+
+    desolateislandt2.add_event(
+        "Tier 2 Completed (Desolate Island)",
+        "Tier 2 Completed (Desolate Island)",
+        location_type=TerraNilLocation,
+        item_type=items.TerraNilItem
+    )
+
+    desolateislandt3.add_event(
+        "Liftoff (Desolate Island)",
+        "Liftoff (Desolate Island)",
         location_type=TerraNilLocation,
         item_type=items.TerraNilItem
     )

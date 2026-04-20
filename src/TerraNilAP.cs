@@ -4,7 +4,6 @@ using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
 using Model;
-using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Reflection;
 using TerraNilAP.MissionLogic;
@@ -22,6 +21,7 @@ public class TerraNilAP : BaseUnityPlugin
 
     public static Harmony Harmony;
     public static ArchipelagoSession Session;
+    public static HashSet<Mission> Completed;
     public static Dictionary<Mission, IMissionLogic> MissionLogic = new Dictionary<Mission, IMissionLogic>();
     public static TMP_FontAsset Font;
 
@@ -36,6 +36,7 @@ public class TerraNilAP : BaseUnityPlugin
         if (MissionLogic.Count == 0)
         {
             MissionLogic.Add(Mission.TemperateRiver, new RiverValleyLogic());
+            MissionLogic.Add(Mission.TropicalIsland, new DesolateIslandLogic());
         }
 
         Logger.LogInfo($"Injecting essential patches");
@@ -45,18 +46,49 @@ public class TerraNilAP : BaseUnityPlugin
         Logger.LogInfo($"Initialization completed");
     }
 
+    private static void GiveMoney(int amount)
+    {
+        try
+        {
+            var cmd = new Model.Commands.Command(new System.Collections.Generic.List<Model.Commands.Delta>());
+            cmd.currencyDelta = amount;
+            Utils.MonoSingleton<Controller.GameController>.Instance.ExecuteCommand(cmd);
+        }
+        catch
+        {
+            Logger.LogInfo("Cannot grant money");
+        }
+    }
+
     public static void ReceivedItem(ReceivedItemsHelper items)
     {
         while (items.Any())
         {
             var item = items.DequeueItem();
-            TerraNilAP.Logger.LogInfo($"Received {item.ItemDisplayName} from {item.Player.Alias}'s {item.LocationDisplayName}");
+            Logger.LogInfo($"Received {item.ItemDisplayName} from {item.Player.Alias}'s {item.LocationDisplayName}");
+            if (item.ItemId == 2)
+            {
+                GiveMoney(10);
+            }
+            else if (item.ItemId == 3)
+            {
+                GiveMoney(25);
+            }
+            else if (item.ItemId == 4)
+            {
+                GiveMoney(50);
+            }
+            else if (item.ItemId == 5)
+            {
+                GiveMoney(75);
+            }
         }
     }
 
     public static void MissionCompleted(Mission mission)
     {
-        Session.SetGoalAchieved();
+        Completed.Add(mission);
+        if (Completed.Count == 2) Session.SetGoalAchieved();
     }
 
     public static Sprite SpriteFromResource(string name)

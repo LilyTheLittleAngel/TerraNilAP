@@ -19,18 +19,29 @@ class Building(Enum):
     Excavator = 103, "Excavator"
     WaterPump = 104, "Water Pump"
     Calcifier = 105, "Calcifier"
+    SandBank = 107, "Sand Bank"
+    Mineralizer = 108, "Mineralizer"
     ResearchCenter = 200, "Research Center"
     Hydroponium = 201, "Hydroponium"
     Beehive = 202, "Beehive"
     Arboretum = 203, "Arboretum"
     SolarAmplifier = 205, "Solar Amplifier"
+    Salinator = 208, "Salinator"
+    Littarium = 209, "Littarium"
+    ShadeclothPillar = 210, "Shadecloth Pillar"
+    CoralLab = 211, "Coral Lab"
+    MonorailNode = 212, "Monorail Node"
     Airship = 300, "Airship"
     LoadingDock = 301, "Loading Dock"
     PoundLock = 302, "Pound Lock"
     RecyclingSilo = 303, "Recycling Silo"
     RecyclingDrone = 304, "Recycling Drone"
+    RecyclerStation = 305, "Recycler Station"
+    RecyclingBeacon = 306, "Recycling Beacon"
+    RockHopper = 324, "Rock Hopper"
     SonicPulse = 325, "Sonic Pulse"
     WildlifeBridge = 326, "Wildlife Bridge"
+    Combustor = 402, "Combustor"
     CloudSeeder = 404, "Cloud Seeder"
     AnimalObservatory = 500, "Animal Observatory"
 
@@ -83,6 +94,10 @@ class TNItem:
 
 fillers: List[TNItem] = [
     TNItem("Wet Rock", 1, ItemClassification.filler),
+    TNItem("10 Money", 2, ItemClassification.filler),
+    TNItem("25 Money", 3, ItemClassification.filler),
+    TNItem("50 Money", 4, ItemClassification.filler),
+    TNItem("75 Money", 5, ItemClassification.filler),
 ]
 
 precollected: List[TNItem] = [
@@ -118,6 +133,38 @@ items: List[TNItem] = [
     TNItem.building(Mission.RiverValley, Building.SonicPulse),
     TNItem.building(Mission.RiverValley, Building.WildlifeBridge),
     TNItem.building(Mission.RiverValley, Building.AnimalObservatory),
+
+    # Level Unlocks
+    TNItem.mission_unlock(Mission.DesolateIsland),
+
+    # Desolate Island Tier 1
+    TNItem.building(Mission.DesolateIsland, Building.Turbine),
+    TNItem.building(Mission.DesolateIsland, Building.ToxinScrubber),
+    TNItem.building(Mission.DesolateIsland, Building.Irrigator),
+    TNItem.building(Mission.DesolateIsland, Building.WaterPump),
+    TNItem.building(Mission.DesolateIsland, Building.Mineralizer),
+    TNItem.building(Mission.DesolateIsland, Building.SandBank),
+
+    # Desolate Island Tier 2
+    TNItem.building(Mission.DesolateIsland, Building.Hydroponium),
+    TNItem.building(Mission.DesolateIsland, Building.Littarium),
+    TNItem.building(Mission.DesolateIsland, Building.Salinator),
+    TNItem.building(Mission.DesolateIsland, Building.ShadeclothPillar),
+    TNItem.building(Mission.DesolateIsland, Building.MonorailNode),
+    TNItem.building(Mission.DesolateIsland, Building.CoralLab),
+
+    # Desolate Island Tier 3
+    TNItem.building(Mission.DesolateIsland, Building.Airship),
+    TNItem.building(Mission.DesolateIsland, Building.RecyclingSilo),
+    TNItem.building(Mission.DesolateIsland, Building.RecyclerStation),
+    TNItem.building(Mission.DesolateIsland, Building.RecyclingBeacon),
+    TNItem.building(Mission.DesolateIsland, Building.RockHopper),
+    TNItem.building(Mission.DesolateIsland, Building.SonicPulse),
+    TNItem.building(Mission.DesolateIsland, Building.AnimalObservatory),
+
+    # Desolate Island Weather
+    TNItem.building(Mission.DesolateIsland, Building.CloudSeeder),
+    TNItem.building(Mission.DesolateIsland, Building.Combustor),
 ]
 
 for item in items + precollected + fillers:

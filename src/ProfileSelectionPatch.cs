@@ -68,6 +68,13 @@ class ProfileSelectionPatch
         TerraNilAP.Harmony.PatchAll(typeof(MissionStartPatch));
         TerraNilAP.Harmony.PatchAll(typeof(DifficultyPatch));
         TerraNilAP.Harmony.PatchAll(typeof(PhotoTakerPatch));
+        TerraNilAP.Harmony.PatchAll(typeof(NewGamePatch));
+        TerraNilAP.Harmony.PatchAll(typeof(MissionUnlockPatch));
+        TerraNilAP.Harmony.PatchAll(typeof(MissionSceneDataPatch));
+        TerraNilAP.Harmony.PatchAll(typeof(StartMissionPatch));
+        TerraNilAP.Harmony.PatchAll(typeof(LoadScenePatch));
+        TerraNilAP.Harmony.PatchAll(typeof(ProgressionInterfaceHandlerPatch));
+        TerraNilAP.Harmony.PatchAll(typeof(PauseMenuWorldMapPatch));
         cutsceneSkipper = new GameObject("CutsceneSkipper");
         cutsceneSkipper.AddComponent<CutscenePatch>();
     }
@@ -104,6 +111,7 @@ class ProfileSelectionPatch
                 TerraNilAP.Logger.LogInfo("Connecting to archipelago");
                 TerraNilAP.Logger.LogInfo("Creating session");
                 TerraNilAP.Session = ArchipelagoSessionFactory.CreateSession(host.GetComponent<TMPro.TMP_InputField>().text + ":" + port.GetComponent<TMPro.TMP_InputField>().text);
+                TerraNilAP.Completed = new System.Collections.Generic.HashSet<Model.Mission>();
                 try
                 {
                     TerraNilAP.Logger.LogInfo("Setting up archipelago profile");
@@ -112,6 +120,7 @@ class ProfileSelectionPatch
                     MonoSingleton<CampaignStateManager>.Instance.CreateAndAssignNewProfile(profileName);
                     MonoSingleton<ProfileSelectionHandler>.Instance.UpdateAllProfileLanguages();
                     var profileState = MonoSingleton<CampaignStateManager>.Instance.LoadPlayerProfile(profileName);
+                    //profileState.difficultyState.hasSelectedDifficulty = true;
                     profileState.hasPlayedTutorial = true;
                     profileState.hasPlayedClimateTutorial = true;
                     profileState.hasPlayedAnimalTutorialIntro = true;
