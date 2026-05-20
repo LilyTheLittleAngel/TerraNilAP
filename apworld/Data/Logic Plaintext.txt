@@ -10,10 +10,21 @@ River Valley:
         + Greenery 100%
 
     Tier 2:
-        First Fynbos        - Requires Beehives
-        First Wetlands      - Requires Hydroponium, Water Pump
-        First Forest        - Requires Beehive, Solar, Arboreteum
-        First Fire          - Requires Beehive, Solar
-        Fynbos Completed    - Requires Beehive, Solar, Arboreteum
-        Wetlands Completed  - Requires Hydroponium, Water Pump
-        Forest Completed    - Requires Beehive, Solar, Arboreteum
+        + First Fynbos        - Requires Beehives
+        + First Wetlands      - Requires Hydroponium, Water Pump
+        + First Forest        - Requires Beehive, Solar, Arboreteum
+        + First Fire          - Requires Beehive, Solar
+        + Fynbos Completed    - Requires Beehive
+        + Wetlands Completed  - Requires Hydroponium, Water Pump
+        + Forest Completed    - Requires Beehive, Solar, Arboreteum
+
+    Tier 3:
+        First Recycling       
+        Recycling Completed
+        3 Photo Stars
+        10 Photo Stars
+        Bronze Photo
+        Silver Photo
+        Gold Photo
+
+    + Climate
