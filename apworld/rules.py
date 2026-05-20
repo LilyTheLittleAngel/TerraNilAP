@@ -79,7 +79,6 @@ def set_all_location_rules_river_valley(world: TerraNilWorld) -> None:
 
     fynbos = tier1 & Has("River Valley - Beehive")
     world.set_rule(world.get_location("River Valley - First Fynbos"), fynbos)
-    world.set_rule(world.get_location("River Valley - Fynbos Completed"), fynbos)
 
     wetlands = tier1 & water & Has("River Valley - Hydroponium")
     world.set_rule(world.get_location("River Valley - First Wetlands"), wetlands)
@@ -91,6 +90,7 @@ def set_all_location_rules_river_valley(world: TerraNilWorld) -> None:
     forest = fire & Has("River Valley - Arboretum")
     world.set_rule(world.get_location("River Valley - First Forest"), forest)
     world.set_rule(world.get_location("River Valley - Forest Completed"), forest)
+    world.set_rule(world.get_location("River Valley - Fynbos Completed"), forest)
 
     world.set_rule(world.get_location("River Valley - Tier 2 Completed"), fynbos & wetlands & forest)
 
