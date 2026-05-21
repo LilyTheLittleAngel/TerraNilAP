@@ -90,7 +90,8 @@ def set_all_location_rules_river_valley(world: TerraNilWorld) -> None:
     forest = fire & Has("River Valley - Arboretum")
     world.set_rule(world.get_location("River Valley - First Forest"), forest)
     world.set_rule(world.get_location("River Valley - Forest Completed"), forest)
-    world.set_rule(world.get_location("River Valley - Fynbos Completed"), forest)
+    world.set_rule(world.get_location("River Valley - Fynbos Completed"), fynbos)
+    ## Note: Getting full fynbos without forests might be difficult depending on the map.
 
     world.set_rule(world.get_location("River Valley - Tier 2 Completed"), fynbos & wetlands & forest)
 
