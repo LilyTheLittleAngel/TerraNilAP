@@ -1,41 +1,20 @@
-River Valley:
+NOTES FOR VERSION 0.2
+PLAYTHROUGH NOT FINISHED (lost save data)
+
+River Valley (tested against latest pre):
     Seems fine
     
     Notes:
+        Some unlocky map gen might make Greenery100% without forming new rivers/rocks difficult
         Getting full fynbos without forests might be difficult depending on the map.
 
 
-Abandoned Quarry:
-    Has problems:
-        Easier climate goals don't require access to the big lake. Didn't have enough humidity to get Fungi In Forests (Abandoned Quarry). Had to cheat in Resources to spam irrigators.
-
-    Notes:
-        Getting full greenery without lava is possible. Failed once out of 3 attempts.
-        Forests need a bit of humidity to grow; this may cause issues.
-
-
-Volcanic Glacier:
-    Has Problems:
-        Biodome require low humidty, which can be problematic if needing to have gotten high humidity goals without dehumidifier.
-
-    Notes:
-        Snow melts can realistically be by using just geothermal generators.
-        It's useful to get >0' C for snow to melt before getting full greenery as well as Pelagic Fish; don't know if this is a hard requirement.
-
-
-Desolate Island:
+Hill and Dale (Latest Prerelease):
     Has Severe Problems:
-        This might just be bad generation but I was unable to get beyond 43% humidity and 26C temperature without a mineralizer or recycling or monorail. I was expected to get to ALL goals, so >99% and >40C. Some goals need to be patched to be later, but lower goals like Moss - Maybe something for resetsanity?
-        Second attempt I got 38C and 53%, but had to cheat in resources (Environmental Engineer). I think 30 and 50% should be a hard cap.
-        Third: 2C (didn't focus temp), 68%.
-
-    Notes:
-        There's nothing that prevents Moss from being needed before temperature being too high, potentially locking out without a reset - hence this location should be removed without resetsanity.
-        Beach is correctly noted as needing combustor, but not Mangrove.
-        Why is Sand Bank required for coral reef, and not Mineralizer?
+        Rain is expected to be doable in tier 2 despite recycling being a pretty large requirement.
 
 
-Polluted Bay:
+Polluted Bay (tested against latest pre):
     Has Minor Problems:
         Poor generation made getting energy to the northeastern side of the river impossible.
         Second attempt fixed this. Resetsanity?
@@ -43,3 +22,39 @@ Polluted Bay:
     Notes:
         Taken care of - Decidious Forest requires humidity.
         ~60% humidity without recycling
+
+
+Abandoned Quarry (tested against latest pre):
+    Has problems:
+        Easier climate goals don't require access to the big lake. Didn't have enough humidity to get Fungi In Forests (Abandoned Quarry). Had to cheat in Resources to spam irrigators.
+
+    Notes:
+        Getting full greenery without lava is possible. Failed once out of 3 attempts.
+        Forests need a bit of humidity to grow; this may cause issues. This caused me issues.
+
+
+Volcanic Glacier (tested against latest pre):
+    Fixed Problems:
+        Biodome require low humidty, which can be problematic if needing to have gotten high humidity goals without dehumidifier.
+
+    Notes:
+        Snow melts can realistically be by using just geothermal generators.
+        It's useful to get >0' C for snow to melt before getting full greenery as well as Pelagic Fish; don't know if this is a hard requirement.
+
+
+Desolate Island (tested against latest pre):
+    Fixed Severe Problems:
+        This might just be bad generation but I was unable to get beyond 43% humidity and 26C temperature without a mineralizer or recycling or monorail. I was expected to get to ALL goals, so >99% and >40C. Some goals need to be patched to be later, but lower goals like Moss - Maybe something for resetsanity?
+        Second attempt I got 38C and 53%, but had to cheat in resources (Environmental Engineer). I think 30 and 50% should be a hard cap.
+        Third: 2C (didn't focus temp), 68%.
+
+    Notes:
+        There's nothing that prevents Moss from being needed before temperature being too high, potentially locking out without a reset - hence this location should be removed without resetsanity.
+        Water pump seems unneeded for all climate goals
+        Beach is correctly noted as needing combustor, but not Mangrove.
+        Why is Sand Bank required for coral reef, and not Mineralizer?
+
+    
+Scorched Caldera (prerelease):
+    Notes:
+        I coul not get parrots without full recycling
