@@ -91,8 +91,8 @@ def set_all_location_rules_river_valley(world: TerraNilWorld) -> None:
     world.set_rule(world.get_location("River Valley - First Forest"), forest)
     world.set_rule(world.get_location("River Valley - Forest Completed"), forest)
     world.set_rule(world.get_location("River Valley - Fynbos Completed"), fynbos)
-    ## Note: Getting full fynbos without forests might be difficult depending on the map.
 
+    ## NOTE: Getting full fynbos without forests might be difficult depending on the map.
     world.set_rule(world.get_location("River Valley - Tier 2 Completed"), fynbos & wetlands & forest)
 
     recyclingbase = tier2 & (
@@ -155,6 +155,7 @@ def set_all_location_rules_abandoned_quarry(world: TerraNilWorld) -> None:
     pollution = energy & Has("Abandoned Quarry - Toxin Scrubber")
     first_greenery = pollution & Has("Abandoned Quarry - Irrigator")
     #requiring lava to get power to the center of the level for toxin scrubbers
+    ## NOTE: Getting full greenery without lava is definetly possible.
     greenery = first_greenery & lava
 
     world.set_rule(world.get_location("Abandoned Quarry - First Energy"), energy)
@@ -171,6 +172,7 @@ def set_all_location_rules_abandoned_quarry(world: TerraNilWorld) -> None:
 
     fire = tier1 & energy & HasAll("Abandoned Quarry - Solar Amplifier", "Abandoned Quarry - Dehumidifier")
     forest = fire & Has("Abandoned Quarry - Arboretum")
+    ## NOTE: Forests need a bit of humidity to grow; this may cause issues.
     fynbos = forest & Has("Abandoned Quarry - Beehive")
     wetlands = tier1 & water & Has("Abandoned Quarry - Hydroponium")
 
@@ -596,6 +598,7 @@ def set_all_location_rules_scorched_caldera(world: TerraNilWorld) -> None:
         ]:
             world.set_rule(world.get_location(goal), water)
 
+
 def set_all_location_rules_volcanic_glacier(world: TerraNilWorld) -> None:
     tier1 = Has("Volcanic Glacier - Tier 1 Completed")
     tier2 = Has("Volcanic Glacier - Tier 2 Completed")
@@ -603,7 +606,8 @@ def set_all_location_rules_volcanic_glacier(world: TerraNilWorld) -> None:
     lava = Has("Volcanic Glacier - Seismic Detonator")
     energy = lava & Has("Volcanic Glacier - Geothermal Plant")
     first_greenery = Has("Volcanic Glacier - Irrigator")
-    greenery = energy &first_greenery & Has("Volcanic Glacier - Toxin Scrubber")
+    greenery = energy & first_greenery & Has("Volcanic Glacier - Toxin Scrubber")
+    ## NOTE: It's useful to get >0' C for snow to melt before getting full greenery; don't know if this is a hard requirement.
 
     world.set_rule(world.get_location("Volcanic Glacier - First Lava"), lava)
     world.set_rule(world.get_location("Volcanic Glacier - First Energy"), energy)
@@ -667,6 +671,7 @@ def set_all_location_rules_volcanic_glacier(world: TerraNilWorld) -> None:
         radiation = greenery
 
         world.set_rule(world.get_location("Volcanic Glacier - Snow Melts"), temperature)
+        ## NOTE: Snow melts can realistically be by using just thermal generators.
         world.set_rule(world.get_location("Volcanic Glacier - Fungi In Forests"), humidity)
         world.set_rule(world.get_location("Volcanic Glacier - Pelagic Fish"), radiation)
         world.set_rule(world.get_location("Volcanic Glacier - Aurora"), humidity & temperature & radiation)
