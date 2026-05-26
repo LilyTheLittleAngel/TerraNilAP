@@ -1,5 +1,6 @@
-NOTES FOR VERSION 0.2
-PLAYTHROUGH NOT FINISHED (lost save data)
+NOTES FOR VERSION 0.2.1-PRE2
+SECOND PLAYTHROUGH 
+FIRST NOT FINISHED (lost save data, v0.2.0 (release))
 
 River Valley (tested against latest pre):
     Seems fine
